@@ -18,7 +18,7 @@
             <strong>Email:</strong> {{ $membro->email }}
         </div>
         <div>
-            <strong>Cpf:</strong> {{ $membro->cpf }}
+            <strong>CPF:</strong> {{ $membro->cpf }}
         </div>
         <div>
             <strong>Data de Nascimento:</strong> {{ $membro->data_nascimento }}
