@@ -15,6 +15,7 @@
             <li>{{ $igreja->nome }} - {{ $igreja->endereco }}</li>
         @endforeach
     </ul>
+    
     <footer>
         <p>&copy; Goettenauer security. Todos os direitos reservados.</p>
     </footer>

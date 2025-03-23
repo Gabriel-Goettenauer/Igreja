@@ -7,9 +7,9 @@
 
     <h1>Lista de Membros</h1>
 
-    <a href="{{ route('membros.create') }}">Criar Novo Membro</a>
+    <a href="{{ route('membros.create') }}" class="btn btn-success">Criar Novo Membro</a>
 
-    <table>
+    <table class="table">
         <thead>
             <tr>
                 <th>Nome</th>
@@ -19,7 +19,7 @@
                 <th>Telefone</th>
                 <th>Estado</th>
                 <th>Cidade</th>
-                <th>Action</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -33,15 +33,23 @@
                     <td>{{ $membro->estado }}</td>
                     <td>{{ $membro->cidade }}</td>
                     <td>
-                        <a href="{{ route('membros.edit', $membro->id) }}">Editar</a>
+                        
+                        <a href="{{ route('membros.edit', $membro->id) }}" class="btn btn-warning">Editar</a>
+                        
+                        
                         <form action="{{ route('membros.destroy', $membro->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit">Deletar</button>
+                            <button type="submit" class="btn btn-danger">Deletar</button>
                         </form>
+
+                      
+                        <a href="{{ route('membros.show', $membro->id) }}" class="btn btn-info">Detalhes</a>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
+    <a href="{{ url('/') }}">Voltar para a Página Inicial</a>
 @endsection
+

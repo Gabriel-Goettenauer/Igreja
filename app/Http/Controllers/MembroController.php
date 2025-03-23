@@ -145,4 +145,11 @@ class MembroController extends Controller
        
         return response()->json([], 500);  
     }
+
+    public function show(Membro $membro)
+{
+    return view('membros.show', compact('membro'));
+}
+
+    
 }
