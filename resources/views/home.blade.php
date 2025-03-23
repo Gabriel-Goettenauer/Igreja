@@ -21,7 +21,7 @@
             
             <div class="btn-group">
                 <a href="{{ route('membros.create') }}" class="btn btn-primary">Cadastrar Membro</a>
-                <a href="{{ route('igrejas.index') }}" class="btn btn-success">Igrejas Cadastradas</a>
+                <a href="{{ route('igrejas.create') }}" class="btn btn-success">Cadastrar igreja</a>
                 <a href="{{ route('membros.index') }}" class="btn btn-info">Membros Cadastrados</a>
             </div>
         </div>

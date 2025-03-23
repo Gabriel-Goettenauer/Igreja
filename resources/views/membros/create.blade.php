@@ -1,9 +1,10 @@
+
 @extends('layouts.app')
 
 @section('title', 'Criar Membro')
 
-@section('content')
 
+@section('content')
     <h2>Criar Membro</h2>
 
     <form action="{{ route('membros.store') }}" method="POST">
@@ -52,15 +53,12 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        
         $('#estado').change(function() {
             var estado = $(this).val();
             var cidades = @json($estados); 
 
-            
             $('#cidade').empty().append('<option value="">Selecione uma cidade</option>');
 
-            
             if (estado && cidades[estado]) {
                 cidades[estado].forEach(function(cidade) {
                     $('#cidade').append('<option value="' + cidade + '">' + cidade + '</option>');
@@ -68,5 +66,91 @@
             }
         });
     </script>
-
 @endsection
+
+
+
+<style>
+
+h2 {
+    color: #0360eb;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 25px;
+}
+
+
+form {
+    background-color: #f4f4f9;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+label {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+
+span.error {
+    color: red;
+    font-size: 0.9rem;
+    display: block;
+    margin-top: -15px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    form {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    label, input, select {
+        font-size: 1rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+}
+
+</style>
