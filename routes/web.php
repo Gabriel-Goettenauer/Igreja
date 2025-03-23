@@ -5,4 +5,5 @@ use App\Http\Controllers\MembroController;
 
 Route::resource('igrejas', IgrejaController::class);
 Route::resource('membros', MembroController::class);
-Route::get('cidades-por-estado', [MembroController::class, 'cidadesPorEstado'])->name('membros.cidadesPorEstado');
+Route::get('membros/cidades-por-estado', [MembroController::class, 'cidadesPorEstado'])->name('membros.cidadesPorEstado');
+
