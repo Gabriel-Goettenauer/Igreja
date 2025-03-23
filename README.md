@@ -1,66 +1,75 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+README - Projeto de Membros e Igrejas
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este projeto é uma aplicação web desenvolvida em Laravel, para gerenciar membros e igrejas, com funcionalidades de CRUD (Create, Read, Update, Delete). A aplicação está em desenvolvimento e segue o padrão de arquitetura MVC (Model-View-Controller).
+O que foi feito até agora
+1. Criação do Projeto Laravel
 
-## About Laravel
+    O projeto foi iniciado utilizando o Laravel, um framework PHP, para criar uma aplicação web.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+    Inicialmente, o projeto foi configurado com os pacotes e dependências necessários.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+2. Estrutura do Banco de Dados
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+    Migrações de Banco de Dados foram criadas para gerar as tabelas membros e igrejas.
 
-## Learning Laravel
+    O banco de dados foi configurado no arquivo .env com MySQL/MariaDB como banco de dados.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+3. Modelo e Controlador para Membros
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+    Foi criado um Modelo Membro (Membro.php) para representar a tabela de membros no banco de dados.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+    Criado um Controlador Membro (MembroController.php) para gerenciar as operações de CRUD (criação, leitura, edição, e exclusão de membros).
 
-## Laravel Sponsors
+        O controlador implementa ações como index, create, store, edit, update, destroy e show.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+4. Views
 
-### Premium Partners
+    As views foram criadas usando o sistema de templates Blade do Laravel.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+        Página de Listagem de Membros (index.blade.php): Exibe a lista de todos os membros cadastrados.
 
-## Contributing
+        Página de Criação de Membro (create.blade.php): Formulário para criação de novos membros.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+        Página de Edição de Membro (edit.blade.php): Formulário para edição dos dados de um membro existente.
 
-## Code of Conduct
+        Página de Detalhes de Membro (show.blade.php): Exibe os detalhes completos de um membro.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+5. Roteamento
 
-## Security Vulnerabilities
+    As rotas foram configuradas para as operações de CRUD.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+        As rotas utilizam o MembroController para gerenciar as requisições:
 
-## License
+            membros.index - Lista de membros.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+            membros.create - Formulário para criação de membro.
+
+            membros.store - Criação de membro no banco.
+
+            membros.edit - Formulário para editar um membro.
+
+            membros.update - Atualização de dados de um membro.
+
+            membros.destroy - Exclusão de um membro.
+
+            membros.show - Detalhes do membro.
+
+6. Validação de Dados
+
+    Validação foi implementada nas operações de criação e atualização de membros.
+
+        Verificação de campos obrigatórios como nome, cpf, email, data_nascimento, entre outros.
+
+        A validação impede a criação de membros com CPF duplicado.
+
+7. Interface e Estilo
+
+    Estilização básica foi aplicada às páginas com CSS personalizado.
+
+        A página de listagem de membros (index.blade.php) foi estilizada para exibir a tabela de membros com botões de ações como Editar, Excluir e Detalhes.
+
+        A página de detalhes de membro (show.blade.php) exibe os dados de um membro específico.
+
+8. Funcionalidades Adicionais
+
+    Dropdown de Cidades e Estados: No formulário de criação e edição de membros, foi implementado um dropdown para selecionar o estado e, com base nele, as cidades correspondentes são exibidas.
