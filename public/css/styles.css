@@ -1,0 +1,177 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    background-color: #2a6ebf;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 15px 0;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header .logo a {
+    color: #fff;
+    font-size: 1.8rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header .nav-links {
+    list-style-type: none;
+    display: flex;
+}
+
+header .nav-links li {
+    margin-left: 20px;
+}
+
+header .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+header .nav-links li a:hover {
+    color: #f7f7f7;
+}
+
+
+.main-content {
+    margin-top: 80px; 
+    background: url('https://img.freepik.com/free-photo/blue-smoke-collection-white-background_1112-1470.jpg') center/cover no-repeat fixed;
+    background-size: cover;
+    color: #fff;
+    padding: 60px 0;
+    text-align: center;
+    min-height: calc(100vh - 150px);
+    position: relative;
+}
+
+
+.main-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); 
+    z-index: -1;
+}
+
+
+.main-content .content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.main-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.main-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Botões */
+.main-content .btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.main-content .btn {
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.main-content .btn:hover {
+    transform: translateY(-3px);
+}
+
+.main-content .btn-primary {
+    background-color: #4e88d0; 
+    color: #fff;
+}
+
+.main-content .btn-success {
+    background-color: #28a745; 
+    color: #fff;
+}
+
+.main-content .btn-info {
+    background-color: #17a2b8;
+    color: #fff;
+}
+
+footer {
+    background-color: #1a4f8f;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .nav-links {
+        flex-direction: column;
+    }
+
+    header .nav-links li {
+        margin: 10px 0;
+    }
+
+    .main-content .content-wrapper {
+        padding: 15px;
+    }
+
+    .main-content h1 {
+        font-size: 2rem;
+    }
+}

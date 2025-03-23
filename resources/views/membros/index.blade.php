@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+    @push('styles')
+        <link href="{{ asset('css/membros.css') }}" rel="stylesheet">
+    @endpush
+
     <h1>Lista de Membros</h1>
 
     <a href="{{ route('membros.create') }}">Criar Novo Membro</a>
