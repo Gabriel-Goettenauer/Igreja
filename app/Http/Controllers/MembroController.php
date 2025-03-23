@@ -9,10 +9,10 @@ use Illuminate\Support\Facades\Http;
 
 class MembroController extends Controller
 {
-    // Exibe o formulário para criar um novo membro
+    
     public function create()
     {
-        // Lista fixa de estados e cidades
+        
         $estados = [
             'SP' => ['São Paulo', 'Campinas', 'São Bernardo do Campo'],
             'RJ' => ['Rio de Janeiro', 'Niterói', 'Volta Redonda'],
@@ -21,13 +21,13 @@ class MembroController extends Controller
             'PR' => ['Curitiba', 'Londrina', 'Maringá'],
         ];
 
-        // Obter todas as igrejas
+        
         $igrejas = Igreja::all();
 
         return view('membros.create', compact('estados', 'igrejas'));
     }
 
-    // Armazena um novo membro
+    
     public function store(Request $request)
     {
         $request->validate([
@@ -57,17 +57,17 @@ class MembroController extends Controller
         return redirect()->route('membros.index');
     }
 
-    // Exibe a lista de membros
+    
     public function index()
     {
         $membros = Membro::all();
         return view('membros.index', compact('membros'));
     }
 
-    // Exibe o formulário para editar um membro
+    
     public function edit(Membro $membro)
     {
-        // Lista fixa de estados e cidades
+        
         $estados = [
             'SP' => ['São Paulo', 'Campinas', 'São Bernardo do Campo'],
             'RJ' => ['Rio de Janeiro', 'Niterói', 'Volta Redonda'],
@@ -80,7 +80,7 @@ class MembroController extends Controller
         return view('membros.edit', compact('membro', 'estados', 'igrejas'));
     }
 
-    // Atualiza os dados de um membro
+    
     public function update(Request $request, Membro $membro)
     {
         $request->validate([
@@ -110,24 +110,24 @@ class MembroController extends Controller
         return redirect()->route('membros.index');
     }
 
-    // Deleta um membro
+    
     public function destroy(Membro $membro)
     {
         $membro->delete();
         return redirect()->route('membros.index');
     }
 
-    // Função para lidar com a mudança de estado e buscar as cidades
+    
     public function cidadesPorEstado(Request $request)
     {
         $estado = $request->estado;
 
-        // Verifica se o estado foi fornecido
+        
         if (!$estado) {
-            return response()->json([], 400);  // Retorna erro se o estado não foi enviado
+            return response()->json([], 400); 
         }
 
-        // Lista fixa de estados e cidades
+        
         $estadosECidades = [
             'SP' => ['São Paulo', 'Campinas', 'São Bernardo do Campo'],
             'RJ' => ['Rio de Janeiro', 'Niterói', 'Volta Redonda'],
@@ -136,13 +136,13 @@ class MembroController extends Controller
             'PR' => ['Curitiba', 'Londrina', 'Maringá'],
         ];
 
-        // Verifica se o estado existe na lista
+        
         if (isset($estadosECidades[$estado])) {
             $cidades = $estadosECidades[$estado];
             return response()->json($cidades);
         }
 
-        // Caso o estado não tenha cidades ou não exista
-        return response()->json([], 500);  // Retorna um erro 500
+       
+        return response()->json([], 500);  
     }
 }

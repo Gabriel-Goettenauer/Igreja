@@ -56,15 +56,12 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        // Atualiza as cidades quando o estado é alterado
+        
         $('#estado').change(function() {
             var estado = $(this).val();
-            var cidades = @json($estados); // Passa os estados e cidades para o JS
+            var cidades = @json($estados); 
 
-            // Limpa as opções anteriores
             $('#cidade').empty().append('<option value="">Selecione uma cidade</option>');
-
-            // Adiciona as cidades do estado selecionado
             if (estado && cidades[estado]) {
                 cidades[estado].forEach(function(cidade) {
                     $('#cidade').append('<option value="' + cidade + '">' + cidade + '</option>');

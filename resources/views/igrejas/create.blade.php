@@ -27,7 +27,7 @@
             <input type="file" id="foto" name="foto">
         </div>
         <div>
-            <button type="submit">Criar Igreja</button>
+            <button type="submit">Criar Igreja!</button>
         </div>
     </form>
 
