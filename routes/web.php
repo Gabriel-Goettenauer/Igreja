@@ -3,7 +3,7 @@
 use App\Http\Controllers\IgrejaController;
 use App\Http\Controllers\MembroController;
 Route::get('/', function () {
-    return view('home');  // 'home' pode ser o nome da sua view
+    return view('home');  
 })->name('home');
 Route::resource('igrejas', IgrejaController::class);
 Route::resource('membros', MembroController::class);
