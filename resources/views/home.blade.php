@@ -17,7 +17,7 @@
     <section class="main-content">
         <div class="content-wrapper">
             <h1>Bem-vindo à Gestão de Igrejas</h1>
-            <p>Escolha uma das opções abaixo para continuar</p>
+            <p>Escolha uma das opções abaixo</p>
             
             <div class="btn-group">
                 <a href="{{ route('membros.create') }}" class="btn btn-primary">Cadastrar Membro</a>
